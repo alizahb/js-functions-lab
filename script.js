@@ -23,13 +23,25 @@ console.log('Exercise 2 Result:', isAdult(21));
 //Exercise 3
 
 const isCharAVowel = (char) => {
-    if (char === 'a' || 'e' || 'i' || 'o' || 'u') {
+    if (char === 'a') {
+    return true;
+     } else if (char === 'e') {
+        return true; 
+    } else if (char === 'i') {
+        return true; 
+    } else if (char === 'o') {
+        return true; 
+    } else if (char === 'u') {
+        return true;
+    } else if (char === 'w') {
         return true;
     } else {
-        return false;
-    }
-}
+        return false; 
+    }    
+
+    }   
 console.log('Exercise 3 Result:', isCharAVowel('a'));
+
 
 //Exercise 4
 
@@ -58,15 +70,18 @@ console.log('Exercise 6 Result:', reverseString("rockstar"));
 //Exercise 7
 
 const checkPalindrome = (str) => {
-    let splitString = str.split('');
-    let reverseArray = splitString.reverse('');
-    if (splitString === reverseArray) {
-        return 'true';
-    } else {
-        return 'false';
-    }
+    let splitString = str.split(''); 
+    console.log(splitString); 
+    let reverseArray = splitString.reverse(''); 
+    let joinArray = reverseArray.join('');
+    console.log(joinArray);
+   if (str === joinArray) {
+    return true;
+   } else {
+    return false; 
+   }
 }
-console.log('Exercise 7 Result:', checkPalindrome("radar"));
+console.log('Exercise 7 Result:', checkPalindrome('radar'));
 
 //Exercise 8
 
@@ -80,7 +95,7 @@ console.log('Exercise 8 Result:', maxOfThree(5, 10, 8));
 //Exercise 9
 
 const calculateTip = (bill, percentage) => {
-    percentage /= Math.pow(10,2); {
+    percentage = (percentage / 100); {
     return bill * percentage;
     }
 }
@@ -100,21 +115,17 @@ console.log('Exercise 10 Result:', convertTemperature(32, "C"));
 //Exercise 11
 
 const basicCalculator = (num1, num2, str) => {
-    if (num1 < num2 && str === 'subtract') {
-        return (num2 - num1);
-    } else if (num1 > num2 && str === 'subtract') {
+    if (str === 'subtract') {
         return (num1 - num2);
     }  else if (str === 'add') {
         return (num1 + num2);
     } else if (str === 'multiply') {
         return (num1 * num2);
-    } else if (str === 'divide' && num1 < num2) {    
-        return (num2 / num1);
     } else {
         return (num1 / num2);
         }  
     }    
-console.log('Exercise 11 Result:', basicCalculator(10, 5,'subtract'));
+console.log('Exercise 11 Result:', basicCalculator(11, 5,'multiply'));
 
 //Exercise 12
 
@@ -139,11 +150,9 @@ console.log('Exercise 12 Result:', calculateGrade(85));
 
 const createUsername = (firstName, lastName) => { 
 const fnArr = firstName; 
-for (var i = 0; i < fnArr.length; i++); 
 const fnNum = fnArr.length;
 const firstThreeFn = fnArr.slice(0, 3);
 const lnArr = lastName;
-for (var i= 0; i < lnArr.length; i++); 
 const lnNum = lnArr.length; 
 const firstThreeLn = lnArr.slice(0, 3); {
 return ((firstThreeFn + firstThreeLn) + (fnNum + lnNum));
@@ -155,14 +164,13 @@ console.log('Exercise 13 Result:', createUsername("Samantha", "Green"));
     //should return count of arguments passed to it when asked 
 
     const numArgs = (...args) => {
-        let arg = 0; 
-        for (let arg of args); 
-        for (var i = 0; i < args.length; i++); {
-        return args.length;
+        const argsList = []; 
+        const count = argsList.push(...args); 
+        return argsList.length;
         } 
-    }
+    
 
-    console.log('Exercise 14 Result:', numArgs(1, 2, 3, 4, 5))
+    console.log('Exercise 14 Result:', numArgs(1, 2, 3, 4)); 
     
 
 
